@@ -22,7 +22,7 @@ int main(){
 	// check for desired action
 	printf("\n// Enter Desired Action: Read(1), Write(2) or RandPW(3): ");
 	scanf("%d", &action);
-	
+
 	if(action == 1 || action == 2){
 		// ask for file location
 		printf("\n// Enter Name of Site: ");
@@ -32,7 +32,7 @@ int main(){
 	}else if(action != 3){
 		exit(1);
 	}
-	
+
 	if(action == 1){
 		// read file
 		strcpy(userFilePathComplete, filePathComplete);
@@ -47,11 +47,11 @@ int main(){
 			printf("\n	// User: %s //\n", readString);
 			fclose(userReadFilePtr);
 		}
-		
+
 		strcpy(pwFilePathComplete, filePathComplete);
 		strcat(pwFilePathComplete, "-pw.txt");
 		FILE *pwReadFilePtr = fopen(pwFilePathComplete, "r");
-			
+
 		if(pwReadFilePtr == NULL){
 			printf("\n// Error Opening File //\n");
 			exit(1);
@@ -66,7 +66,7 @@ int main(){
 		strcpy(userFilePathComplete, filePathComplete);
 		strcat(userFilePathComplete, "-user.txt");
 		FILE *userWriteFilePtr = fopen(userFilePathComplete, "w");
-	
+
 		if(userWriteFilePtr == NULL){
 			printf("\n// Error Opening File //\n");
 			exit(1);
@@ -113,7 +113,7 @@ int main(){
 		exit(0);
 	}
 
-	printf("\n");	
-	
+	printf("\n");
+
 	return 0;
 }
